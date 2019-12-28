@@ -5,10 +5,10 @@
 
 ### Supported Options :
 
- - **play - <space>**
- - **pause - <space>**
- - **forward - <right key>**
- - **backward - <left key>**
+ - **play - [space]**
+ - **pause - [space]**
+ - **forward - [right key]**
+ - **backward - [left key]**
  - **Set Volume - [0-100]**
 
 ### Run :
