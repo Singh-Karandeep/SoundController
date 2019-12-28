@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Server</title>
+    <script type=text/javascript>
+		$(function()
+			{ $("#i_vol_up").click(function (event)
+				{ $.getJSON('/vol_up', { },
+					function(data) { }); return false; }); });
+
+		$(function()
+			{ $("#i_vol_down").click(function (event)
+				{ $.getJSON('/vol_down', { },
+					function(data) { }); return false; }); });
+
+		$(function()
+			{ $("#i_space").click(function (event)
+				{ $.getJSON('/space', { },
+					function(data) { }); return false; }); });
+
+		$(function()
+			{ $("#i_left").click(function (event)
+				{ $.getJSON('/left', { },
+					function(data) { }); return false; }); });
+
+		$(function()
+			{ $("#i_right").click(function (event)
+				{ $.getJSON('/right', { },
+					function(data) { }); return false; }); });
+    </script>
+</head>
+<body>
+<div class="container well">
+    <div class="row">
+        <div class="col-lg-4">
+            <button type="button" class="btn btn-primary" id="i_vol_up">
+                <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="col-lg-4">
+            <button type="button" class="btn btn-primary" id="i_vol_down">
+                <span class="glyphicon glyphicon-volume-down" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="col-lg-4">
+            <button type="button" class="btn btn-primary" id="i_space">
+                <span class="glyphicon glyphicon-play" aria-hidden="true"></span><b>/</b><span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-4">
+            <button type="button" class="btn btn-primary" id="i_left">
+                <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="col-lg-4">
+            <button type="button" class="btn btn-primary" id="i_right">
+                <span class="glyphicon glyphicon-forward" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+    <br>
+    <form action="set_custom_vol" method="POST">
+        <div class="row">
+            <div class="col-lg-4">
+                <button class="btn btn-primary" type="submit">Set Volume</button>
+            </div>
+            <div class="col-lg-4">
+                <input name="vol_value">
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
