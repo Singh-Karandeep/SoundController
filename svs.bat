@@ -1,2 +1,2 @@
 @echo off
-python %~dp0/custom_server.py
+python %~dp0/control_audio.py
