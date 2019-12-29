@@ -5,11 +5,11 @@
 
 ### Supported Options :
 
- - **play - [space]**
- - **pause - [space]**
- - **forward - [right key]**
- - **backward - [left key]**
- - **Set Volume - [0-100]**
+ - **Play/Pause**
+ - **Forward**
+ - **Backward**
+ - **Previous Track**
+ - **Next Track**
 
 ### Run :
 ```sh
@@ -26,5 +26,3 @@ Open IP Address in any device connected across same network.
 Control your audio accordingly.
 
 **All buttons can be tested on any YouTube Video**
-
-Utility used : https://www.nirsoft.net/utils/nircmd.html

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title>Server</title>
+    <title>Audio Server</title>
     <script type=text/javascript>
 		$(function()
 			{ $("#i_vol_up").click(function (event)
@@ -20,18 +20,28 @@
 					function(data) { }); return false; }); });
 
 		$(function()
-			{ $("#i_space").click(function (event)
-				{ $.getJSON('/space', { },
+			{ $("#i_play_pause").click(function (event)
+				{ $.getJSON('/play_pause', { },
 					function(data) { }); return false; }); });
 
 		$(function()
-			{ $("#i_left").click(function (event)
-				{ $.getJSON('/left', { },
+			{ $("#i_reverse").click(function (event)
+				{ $.getJSON('/reverse', { },
 					function(data) { }); return false; }); });
 
 		$(function()
-			{ $("#i_right").click(function (event)
-				{ $.getJSON('/right', { },
+			{ $("#i_forward").click(function (event)
+				{ $.getJSON('/forward', { },
+					function(data) { }); return false; }); });
+
+		$(function()
+			{ $("#i_previous_track").click(function (event)
+				{ $.getJSON('/previous_track', { },
+					function(data) { }); return false; }); });
+
+		$(function()
+			{ $("#i_next_track").click(function (event)
+				{ $.getJSON('/next_track', { },
 					function(data) { }); return false; }); });
     </script>
 </head>
@@ -49,36 +59,34 @@
             </button>
         </div>
         <div class="col-lg-4">
-            <button type="button" class="btn btn-primary" id="i_space">
+            <button type="button" class="btn btn-primary" id="i_play_pause">
                 <span class="glyphicon glyphicon-play" aria-hidden="true"></span><b>/</b><span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
             </button>
         </div>
     </div>
     <br>
     <div class="row">
-        <div class="col-lg-4">
-            <button type="button" class="btn btn-primary" id="i_left">
+        <div class="col-lg-3">
+            <button type="button" class="btn btn-primary" id="i_reverse">
                 <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
             </button>
         </div>
-        <div class="col-lg-4">
-            <button type="button" class="btn btn-primary" id="i_right">
+        <div class="col-lg-3">
+            <button type="button" class="btn btn-primary" id="i_forward">
                 <span class="glyphicon glyphicon-forward" aria-hidden="true"></span>
             </button>
         </div>
-    </div>
-
-    <br>
-    <form action="set_custom_vol" method="POST">
-        <div class="row">
-            <div class="col-lg-4">
-                <button class="btn btn-primary" type="submit">Set Volume</button>
-            </div>
-            <div class="col-lg-4">
-                <input name="vol_value">
-            </div>
+        <div class="col-lg-3">
+            <button type="button" class="btn btn-primary" id="i_previous_track">
+                <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
+            </button>
         </div>
-    </form>
+        <div class="col-lg-3">
+            <button type="button" class="btn btn-primary" id="i_next_track">
+                <span class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
 </div>
 </body>
 </html>
