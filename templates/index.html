@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Audio Server</title>
+    <link rel = "stylesheet" type = "text/css" href = "style.css" />
     <script type=text/javascript>
 		$(function()
 			{ $("#i_vol_up").click(function (event)
@@ -43,22 +44,37 @@
 			{ $("#i_next_track").click(function (event)
 				{ $.getJSON('/next_track', { },
 					function(data) { }); return false; }); });
+
+		$(function()
+			{ $("#i_youtube_previous_track").click(function (event)
+				{ $.getJSON('/youtube_previous_track', { },
+					function(data) { }); return false; }); });
+
+		$(function()
+			{ $("#i_youtube_next_track").click(function (event)
+				{ $.getJSON('/youtube_next_track', { },
+					function(data) { }); return false; }); });
+
     </script>
 </head>
 <body>
+<br><br><br><br>
 <div class="container well">
+    <h2 class="text-center">
+        <b>Sound Controller</b>
+    </h2>
     <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-4 text-center">
             <button type="button" class="btn btn-primary" id="i_vol_up">
                 <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
             </button>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 text-center">
             <button type="button" class="btn btn-primary" id="i_vol_down">
                 <span class="glyphicon glyphicon-volume-down" aria-hidden="true"></span>
             </button>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 text-center">
             <button type="button" class="btn btn-primary" id="i_play_pause">
                 <span class="glyphicon glyphicon-play" aria-hidden="true"></span><b>/</b><span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
             </button>
@@ -66,23 +82,41 @@
     </div>
     <br>
     <div class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-3 text-center">
             <button type="button" class="btn btn-primary" id="i_reverse">
                 <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
             </button>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 text-center">
             <button type="button" class="btn btn-primary" id="i_forward">
                 <span class="glyphicon glyphicon-forward" aria-hidden="true"></span>
             </button>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 text-center">
             <button type="button" class="btn btn-primary" id="i_previous_track">
                 <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
             </button>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 text-center">
             <button type="button" class="btn btn-primary" id="i_next_track">
+                <span class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+    <br>
+</div>
+<div class="container well">
+    <h3 class="text-center">
+        <b>For Playing Previous/Next Song on YouTube Only...</b>
+    </h3>
+    <div class="row">
+        <div class="col-lg-6 text-center">
+            <button type="button" class="btn btn-primary" id="i_youtube_previous_track">
+                <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="col-lg-6 text-center">
+            <button type="button" class="btn btn-primary" id="i_youtube_next_track">
                 <span class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span>
             </button>
         </div>
