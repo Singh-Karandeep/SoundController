@@ -8,54 +8,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Audio Server</title>
-    <link rel = "stylesheet" type = "text/css" href = "style.css" />
-    <script type=text/javascript>
-		$(function()
-			{ $("#i_vol_up").click(function (event)
-				{ $.getJSON('/vol_up', { },
-					function(data) { }); return false; }); });
-
-		$(function()
-			{ $("#i_vol_down").click(function (event)
-				{ $.getJSON('/vol_down', { },
-					function(data) { }); return false; }); });
-
-		$(function()
-			{ $("#i_play_pause").click(function (event)
-				{ $.getJSON('/play_pause', { },
-					function(data) { }); return false; }); });
-
-		$(function()
-			{ $("#i_reverse").click(function (event)
-				{ $.getJSON('/reverse', { },
-					function(data) { }); return false; }); });
-
-		$(function()
-			{ $("#i_forward").click(function (event)
-				{ $.getJSON('/forward', { },
-					function(data) { }); return false; }); });
-
-		$(function()
-			{ $("#i_previous_track").click(function (event)
-				{ $.getJSON('/previous_track', { },
-					function(data) { }); return false; }); });
-
-		$(function()
-			{ $("#i_next_track").click(function (event)
-				{ $.getJSON('/next_track', { },
-					function(data) { }); return false; }); });
-
-		$(function()
-			{ $("#i_youtube_previous_track").click(function (event)
-				{ $.getJSON('/youtube_previous_track', { },
-					function(data) { }); return false; }); });
-
-		$(function()
-			{ $("#i_youtube_next_track").click(function (event)
-				{ $.getJSON('/youtube_next_track', { },
-					function(data) { }); return false; }); });
-
-    </script>
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='stylesheets/style.css') }}" />
+    <script type="text/javascript" src="{{ url_for('static', filename='javascripts/index.js') }}"></script>
 </head>
 <body>
 <br><br><br><br>
@@ -110,14 +64,24 @@
         <b>For Playing Previous/Next Song on YouTube Only...</b>
     </h3>
     <div class="row">
-        <div class="col-lg-6 text-center">
+        <div class="col-lg-3 text-center">
             <button type="button" class="btn btn-primary" id="i_youtube_previous_track">
-                <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
+                <b>Previous Track</b>
             </button>
         </div>
-        <div class="col-lg-6 text-center">
+        <div class="col-lg-3 text-center">
             <button type="button" class="btn btn-primary" id="i_youtube_next_track">
-                <span class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span>
+                <b>Next Track</b>
+            </button>
+        </div>
+        <div class="col-lg-3 text-center">
+            <button type="button" class="btn btn-primary" id="i_youtube_playback_speed_plus">
+                <b>Playback Speed +</b>
+            </button>
+        </div>
+        <div class="col-lg-3 text-center">
+            <button type="button" class="btn btn-primary" id="i_youtube_playback_speed_minus">
+                <b>Playback Speed -</b>
             </button>
         </div>
     </div>

@@ -25,4 +25,6 @@ $ svs
 Open IP Address in any device connected across same network.
 Control your audio accordingly.
 
+Code Tested on YouTube, Netflix, Amazon Prime & Hotstar.
+
 **All buttons can be tested on any YouTube Video**

@@ -17,6 +17,8 @@ class Event:
     KEY_PREVIOUS_TRACK = 0xB1
     KEY_YOUTUBE_PREVIOUS_TRACK = [0x10, 0x50]
     KEY_YOUTUBE_NEXT_TRACK = [0x10, 0x4E]
+    KEY_YOUTUBE_PLAYBACK_SPEED_PLUS = [0x10, 0xBE]
+    KEY_YOUTUBE_PLAYBACK_SPEED_MINUS = [0x10, 0xBC]
 
     @staticmethod
     def single_press(code):
@@ -103,6 +105,20 @@ def youtube_previous_track():
 def youtube_next_track():
     print("YOUTUBE NEXT TRACK...!!!")
     event_obj.combi_press(Event.KEY_YOUTUBE_NEXT_TRACK)
+    return ""
+
+
+@app.route("/youtube_playback_speed_plus/")
+def youtube_playback_speed_plus():
+    print("YOUTUBE PLAYBACK INCREASED BY 0.25x...!!!")
+    event_obj.combi_press(Event.KEY_YOUTUBE_PLAYBACK_SPEED_PLUS)
+    return ""
+
+
+@app.route("/youtube_playback_speed_minus/")
+def youtube_playback_speed_minus():
+    print("YOUTUBE PLAYBACK DECREASED BY 0.25x...!!!")
+    event_obj.combi_press(Event.KEY_YOUTUBE_PLAYBACK_SPEED_MINUS)
     return ""
 
 
